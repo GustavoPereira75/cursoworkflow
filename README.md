@@ -41,20 +41,17 @@ A interface do Workflow Toolbox foi projetada para oferecer uma experiência vis
 
 A interface principal é composta pelos seguintes elementos:
 
-Painel de Workflows: Localizado à esquerda da tela, exibe os workflows disponíveis no projeto, permitindo selecionar, abrir e criar novos fluxos de validação.
+Painel de Workflows: localizado no topo da tela, exibe os workflows disponíveis no projeto, permitindo selecionar, abrir e criar novos fluxos de validação.
 
-Visualizador de Etapas: Ao selecionar um workflow, é apresentada uma visualização sequencial das etapas (modelos) que o compõem, com indicadores de status (✔️ concluído, ⏳ em execução, ❌ com erro, etc.).
+Visualizador de Etapas: ao selecionar um workflow, é apresentada uma visualização sequencial das etapas (modelos) que o compõem, com indicadores de status (✔️ concluído, ⏳ em execução, ❌ com erro, etc.).
 
-Barra de Ações: Disponibiliza botões para iniciar, pausar, retomar e reiniciar o workflow, além de salvar alterações e acessar os relatórios de execução.
+Aba de Parâmetros: ao clicar, o usuário pode visualizar e editar os parâmetros e modelos utilizados naquela execução, como: parar após a execução, admitir falsos positivos, comportamento da camada de saída, entre outros.
 
-Painel de Resultados: Apresenta os logs detalhados de cada etapa executada, incluindo mensagens, exceções encontradas, e estatísticas.
-
-Aba de Parâmetros: Ao clicar em uma etapa específica, o usuário pode visualizar e editar os parâmetros utilizados naquela execução, como camada de entrada, domínio de validação, critérios, entre outros.
-
-Essa disposição favorece a identificação rápida de falhas, a análise de resultados parciais e a reconfiguração de etapas de forma isolada. A interface ainda oferece recursos visuais como ícones de status, barra de progresso e notificações contextuais, que auxiliam o usuário no acompanhamento do processo.
+Barra de Ações (parte inferior): disponibiliza botões para iniciar, pausar e retomar a execução a partir do último modelo processado.
 
 ![Interface do Workflow Toolbox no QGIS](assets/modulo-05/img-interface-workflow.png)
-*Figura 5.2: Interface da ferramenta Workflow Toolbox no QGIS*
+      
+  *Figura 5.2: Interface Workflow Toolbox no QGIS*
 
 ### 1.4 Integração com QGIS Processing
 
