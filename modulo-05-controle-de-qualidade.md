@@ -49,7 +49,7 @@ A interface principal é composta pelos seguintes elementos:
 
 - 4- Barra de Ações (parte inferior): disponibiliza botões para iniciar, pausar e retomar a execução a partir do último modelo processado.
 
-<img src="assets/modulo-05/img-interface-workflow.png" alt="Interface do Workflow Toolbox no QGIS" width="500"/>
+<img src="assets/modulo-05/img-interface-workflow.png" alt="Interface do Workflow Toolbox no QGIS" width="400"/>
       
   *Figura 1.0: Interface Workflow Toolbox no QGIS*
 
@@ -65,8 +65,8 @@ Essa integração amplia consideravelmente as possibilidades da ferramenta, perm
 - Aproveitem funcionalidades de plugins externos, desde que compatíveis com o sistema de processamento do QGIS;
 
 - Definam parâmetros e entradas de forma padronizada, mantendo consistência entre modelos e workflows.
-- 
-- <img src="assets/modulo-05/img-interface-processing.png" alt="Interface do Processing" width="500"/>
+  
+- <img src="assets/modulo-05/img-interface-processing.png" alt="Interface do Processing" width="400"/>
       
   *Figura 2.0: Interface processing no QGIS*
 
