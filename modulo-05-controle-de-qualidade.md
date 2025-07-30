@@ -54,6 +54,22 @@ A interface principal é composta pelos seguintes elementos:
   *Figura 1.0: Interface Workflow Toolbox no QGIS*
 
 ### 1.4 Integração com QGIS Processing
+O Workflow Toolbox é construído sobre o framework de Processamento do QGIS (QGIS Processing), o que permite que os modelos criados no DSGTools utilizem diretamente algoritmos já existentes no ambiente QGIS.
+
+Essa integração amplia consideravelmente as possibilidades da ferramenta, permitindo que os usuários:
+
+- Incorporem algoritmos nativos do QGIS nos modelos, como validações topológicas, operações de geoprocessamento, seleções espaciais e filtros por atributos;
+
+- Utilizem scripts personalizados (Python ou R) registrados como algoritmos no QGIS Processing;
+
+- Aproveitem funcionalidades de plugins externos, desde que compatíveis com o sistema de processamento do QGIS;
+
+- Definam parâmetros e entradas de forma padronizada, mantendo consistência entre modelos e workflows.
+- 
+- <img src="assets/modulo-05/img-interface-processing.png" alt="Interface do Processing" width="500"/>
+      
+  *Figura 2.0: Interface processing no QGIS*
+
 
 ## 2. Como Montar os Models
 
