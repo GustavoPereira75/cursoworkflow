@@ -35,23 +35,23 @@ A arquitetura do Workflow Toolbox foi desenvolvida para oferecer flexibilidade, 
 - **Workflows**: Representam a sequência lógica de execução dos modelos. São compostos por etapas interligadas, nas quais a saída de um modelo pode servir como entrada para o próximo. A ordem de execução, as dependências e as configurações são definidas pelo usuário.
 
 - **Gerenciador de Execução (ferramenta do DSG tools)** : Responsável por controlar o andamento do workflow. Monitora o status de cada etapa (pendente, em execução, concluída ou com erro), permite pausas, retomadas, reexecuções e registro das exceções.
-- 
+  
 ### 1.3 Interface do Usuário
 A interface do Workflow Toolbox foi projetada para oferecer uma experiência visual clara e funcional durante a configuração e execução dos workflows. A ferramenta é acessada por meio do menu do DSGTools, dentro do ambiente do QGIS.
 
 A interface principal é composta pelos seguintes elementos:
 
-Painel de Workflows: localizado no topo da tela, exibe os workflows disponíveis no projeto, permitindo selecionar, abrir e criar novos fluxos de validação.
+- 1- Painel de Workflows: localizado no topo da tela, exibe os workflows disponíveis no projeto, permitindo selecionar, abrir e criar novos fluxos de validação.
 
-Visualizador de Etapas: ao selecionar um workflow, é apresentada uma visualização sequencial das etapas (modelos) que o compõem, com indicadores de status (✔️ concluído, ⏳ em execução, ❌ com erro, etc.).
+- 2- Visualizador de Etapas: ao selecionar um workflow, é apresentada uma visualização sequencial das etapas (modelos) que o compõem, com indicadores de status (✔️ concluído, ⏳ em execução, ❌ com erro, etc.).
 
-Aba de Parâmetros: ao clicar, o usuário pode visualizar e editar os parâmetros e modelos utilizados naquela execução, como: parar após a execução, admitir falsos positivos, comportamento da camada de saída, entre outros.
+- 3- Permite ao usuário adicionar ou remover workflows, além de visualizar e editar os parâmetros e modelos utilizados na execução. Entre as opções disponíveis, é possível configurar ações como: interromper após a execução, permitir falsos positivos, definir o comportamento da camada de saída, entre outras.
 
-Barra de Ações (parte inferior): disponibiliza botões para iniciar, pausar e retomar a execução a partir do último modelo processado.
+- 4- Barra de Ações (parte inferior): disponibiliza botões para iniciar, pausar e retomar a execução a partir do último modelo processado.
 
-![Interface do Workflow Toolbox no QGIS](assets/modulo-05/img-interface-workflow.png)
+<img src="assets/modulo-05/img-interface-workflow.png" alt="Interface do Workflow Toolbox no QGIS" width="500"/>
       
-  *Figura 5.2: Interface Workflow Toolbox no QGIS*
+  *Figura 1.0: Interface Workflow Toolbox no QGIS*
 
 ### 1.4 Integração com QGIS Processing
 
