@@ -75,9 +75,9 @@ Essa integração amplia consideravelmente as possibilidades da ferramenta, perm
  A etapa de construção dos Modelos (ou models) é fundamental para o funcionamento do Workflow Toolbox. Para facilitar esse processo, o QGIS oferece o Modelador gráfico, uma interface dedicada à criação e configuração dos modelos. Com essa ferramenta, o usuário pode montar fluxos internos, definir parâmetros de entrada e saída, e personalizar a lógica de validação de acordo com os requisitos do projeto.
 
  O acesso a interface é feito no QGIS como mostrado abaixo
-- <img src="assets/modulo-05/img-interface-model-painel.png" alt="interface do painel" width="400"/>
+- <img src="assets/modulo-05/img-model-painel.png" alt="interface do painel" width="800"/>
 
-*Figura 2.0: Interface do painel*
+*Figura 3.0: Interface do painel*
 
 ### 2.1 Interface do Modelador Gráfico do QGIS
 
