@@ -307,14 +307,14 @@ Escolha uma pasta e salve com um nome representativo, como verifica_geometria.mo
 
 Em seguida, clique em Rodar Modelo (F5) para iniciar a execução.
 
-<img src="assets/modulo-05/img-tutorial-execucao-01" alt="img-tutorial-execucao-01" width="600"/>
+<img src="assets/modulo-05/img-tutorial-execucao-01.png" alt="img-tutorial-execucao-01" width="600"/>
 
  *Figura 6.3: tutorial execução*
 
 - 🟢 Resultado Final
 O QGIS irá processar os dados e gerar a camada de saída com os erros encontrados. Você poderá visualizar essas geometrias diretamente no mapa.
 
-<img src="assets/modulo-05/img-tutorial-execucao-02" alt="img-tutorial-execucao-02" width="600"/>
+<img src="assets/modulo-05/img-tutorial-execucao-02.png" alt="img-tutorial-execucao-02" width="600"/>
 
  *Figura 6.4: tutorial Resultado*
 
