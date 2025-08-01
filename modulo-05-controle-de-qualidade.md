@@ -247,7 +247,7 @@ Na aba lateral Algoritmos, pesquise por “Verificador de Geometria Inválida”
 
  <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-01" width="700"/> tutorial 01
 
-*Figura 6.0: tutorial 01*
+ *Figura 6.0: tutorial 01*
 
 🔧 Passo 3 – Definindo os Parâmetros de Entrada
 Assim que o algoritmo for inserido, será aberta uma janela solicitando os parâmetros.
@@ -256,7 +256,7 @@ O primeiro parâmetro será a camada de entrada. Clique no campo correspondente 
 
  <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-02" width="700"/> tutorial 02
 
-*Figura 6.1: tutorial 01*
+ *Figura 6.1: tutorial 01*
 
 📥 Tipos de Entrada Disponíveis
 Você poderá escolher entre diferentes tipos de entrada:
@@ -269,17 +269,17 @@ tipo 01
 tipo 02
 <img src="assets/modulo-05/img-tutorial-entrada-02.png" alt="interface-tutorial-02" width="400"/> tutorial entrada 02
 
-*Figura 6.1.2: tutorial 02*
+ *Figura 6.1.2: tutorial 02*
 
 tipo 03
 <img src="assets/modulo-05/img-tutorial-entrada-03.png" alt="interface-tutorial-02" width="600"/> tutorial entrada 03
 
-*Figura 6.1.3: tutorial 03*
+ *Figura 6.1.3: tutorial 03*
 
 tipo 04
 <img src="assets/modulo-05/img-tutorial-entrada-04.png" alt="interface-tutorial-02" width="600"/> tutorial entrada 04
 
-*Figura 6.1.4: tutorial 04*
+ *Figura 6.1.4: tutorial 04*
 
 
 
