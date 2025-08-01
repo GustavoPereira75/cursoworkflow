@@ -245,7 +245,7 @@ Você verá uma tela com o canvas vazio, onde os algoritmos e entradas serão ad
 🧩 Passo 2 – Adicionando um Algoritmo
 Na aba lateral Algoritmos, pesquise por “Verificador de Geometria Inválida” (ou o algoritmo equivalente usado no DSGTools). Dê dois cliques ou arraste para o canvas.
 
- <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-01" width="700"/> tutorial 01
+ <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-01" width="700"/>
 
  *Figura 6.0: tutorial 01*
 
@@ -254,7 +254,7 @@ Assim que o algoritmo for inserido, será aberta uma janela solicitando os parâ
 
 O primeiro parâmetro será a camada de entrada. Clique no campo correspondente e selecione a opção de camada desejada.
 
- <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-02" width="700"/> tutorial 02
+ <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-02" width="700"/>
 
  *Figura 6.1: tutorial 01*
 
@@ -262,22 +262,22 @@ O primeiro parâmetro será a camada de entrada. Clique no campo correspondente 
 Você poderá escolher entre diferentes tipos de entrada:
 
 tipo 01
-<img src="assets/modulo-05/img-tutorial-entrada-01.png" alt="interface-tutorial-02" width="400"/> tutorial entrada 01
+<img src="assets/modulo-05/img-tutorial-entrada-01.png" alt="interface-tutorial-02" width="400"/>
 
 *Figura 6.1.1: tutorial 01*
 
 tipo 02
-<img src="assets/modulo-05/img-tutorial-entrada-02.png" alt="interface-tutorial-02" width="400"/> tutorial entrada 02
+<img src="assets/modulo-05/img-tutorial-entrada-02.png" alt="interface-tutorial-02" width="400"/>
 
  *Figura 6.1.2: tutorial 02*
 
 tipo 03
-<img src="assets/modulo-05/img-tutorial-entrada-03.png" alt="interface-tutorial-02" width="600"/> tutorial entrada 03
+<img src="assets/modulo-05/img-tutorial-entrada-03.png" alt="interface-tutorial-02" width="600"/>
 
  *Figura 6.1.3: tutorial 03*
 
 tipo 04
-<img src="assets/modulo-05/img-tutorial-entrada-04.png" alt="interface-tutorial-02" width="600"/> tutorial entrada 04
+<img src="assets/modulo-05/img-tutorial-entrada-04.png" alt="interface-tutorial-02" width="600"/>
 
  *Figura 6.1.4: tutorial 04*
 
