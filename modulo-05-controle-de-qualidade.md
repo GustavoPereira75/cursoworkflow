@@ -4,7 +4,7 @@
 
 ## Objetivos de Aprendizagem
 - [ ] Compreender o Workflow Toolbox
-- [ ] Construir modelos usando o model helper
+- [ ] Construir modelos usando o modelador Gráfico
 - [ ] Compreender especificidades dos modelos
 - [ ] Montar workflows completos
 - [ ] Executar workflows existentes
@@ -45,7 +45,7 @@ A interface principal é composta pelos seguintes elementos:
 
 - 2- Visualizador de Etapas: ao selecionar um workflow, é apresentada uma visualização sequencial das etapas (modelos) que o compõem, com indicadores de status (✔️ concluído, ⏳ em execução, ❌ com erro, etc.).
 
-- 3- Permite ao usuário adicionar ou remover workflows, além de visualizar e editar os parâmetros e modelos utilizados na execução. Entre as opções disponíveis, é possível configurar ações como: interromper após a execução, permitir falsos positivos, definir o comportamento da camada de saída, entre outras.
+- 3- Ferramentas: permite ao usuário adicionar ou remover workflows, além de visualizar e editar os parâmetros e modelos utilizados na execução. Entre as opções disponíveis, é possível configurar ações como: interromper após a execução, permitir falsos positivos, definir o comportamento da camada de saída, entre outras.
 
 - 4- Barra de Ações (parte inferior): disponibiliza botões para iniciar, pausar e retomar a execução a partir do último modelo processado.
 
@@ -66,7 +66,7 @@ Essa integração amplia consideravelmente as possibilidades da ferramenta, perm
 
 - Definam parâmetros e entradas de forma padronizada, mantendo consistência entre modelos e workflows.
   
-- <img src="assets/modulo-05/img-interface-processing.png" alt="Interface do Processing" width="400"/>
+ <img src="assets/modulo-05/img-interface-processing.png" alt="Interface do Processing" width="400"/>
       
   *Figura 2.0: Interface processing*
 
@@ -74,8 +74,9 @@ Essa integração amplia consideravelmente as possibilidades da ferramenta, perm
 ## 2. Como Montar os Models
  A etapa de construção dos Modelos (ou models) é fundamental para o funcionamento do Workflow Toolbox. Para facilitar esse processo, o QGIS oferece o Modelador gráfico, uma interface dedicada à criação e configuração dos modelos. Com essa ferramenta, o usuário pode montar fluxos internos, definir parâmetros de entrada e saída, e personalizar a lógica de validação de acordo com os requisitos do projeto.
 
- O acesso a interface é feito no QGIS como mostrado abaixo
-- <img src="assets/modulo-05/img-model-painel.png" alt="interface do painel" width="800"/>
+ O acesso a interface é feito no QGIS como mostrado abaixo:
+
+ <img src="assets/modulo-05/img-model-painel.png" alt="interface do painel" width="800"/>
 
 *Figura 3.0: Interface do painel*
 
@@ -106,24 +107,24 @@ Exibe os tipos de **entradas necessárias** para o modelo funcionar, como:
 - Camadas vetoriais ou raster;
 - Parâmetros de texto, número, booleano, arquivos, pastas, etc.
 
-Você deve arrastar as entradas necessárias para dentro do modelo (área central) para configurar os parâmetros esperados.
+> ⚙️ **Dica:** Você deve arrastar as entradas necessárias para dentro do modelo (área central) para configurar os parâmetros esperados!
 
 ---
 
  **04 – Canvas de Modelagem**
 É a **área principal** onde você constrói o fluxo do seu modelo.
 - Aqui você arrasta os algoritmos e define as conexões entre entradas, processos e saídas.
-- É onde o modelo visual toma forma, com o encadeamento lógico entre as etapas do processamento.
+- É onde o modelo visual toma forma, com o encadeamento entre as etapas do processamento.
 
 ---
 
 
-- <img src="assets/modulo-05/img-interface-model-canvas.png" alt="Interface do Modelador Gráfico" width="400"/>
+ <img src="assets/modulo-05/img-interface-model-canvas.png" alt="Interface do Modelador Gráfico" width="700"/>
 
-*Figura 2.0: Interface do Modelador Gráfico*
+*Figura 4.0: Interface do Modelador Gráfico*
 
 ### 2.1.1 Construção no Canvas
- A estrutura básica de um modelo segue três etapas principais:
+  Exemplo de estrutura básica de um modelo que segue três etapas:
 
 ---
 
@@ -139,7 +140,7 @@ Essas entradas são configuradas no início do modelo e podem ser reutilizadas e
 ---
 
  ⚙️ 2. **Processamento (Transformações)**
-São os algoritmos que realizam ações sobre os dados de entrada. Podem incluir:
+São os algoritmos da aba *Processing* que realizam ações sobre os dados de entrada. Podem incluir:
 - Ferramentas de análise espacial
 - Operações de geoprocessamento
 - Cálculos, filtros, seleções
@@ -158,17 +159,154 @@ As saídas são os resultados gerados após o processamento. Podem ser:
 Essas saídas podem ser salvas, reutilizadas ou utilizadas como insumo em outros modelos.
 
 ---
-- <img src="assets/modulo-05/img-interface-model-etl.png" alt="Interface do Modelador Gráfico" width="400"/>
-  *Figura 2.0: Interface do Modelador Gráfico Canvas*
+ <img src="assets/modulo-05/img-interface-model-etl.png" alt="Interface do Modelador Gráfico" width="400"/>
+
+  *Figura 5.0: Interface do Modelador Gráfico Canvas*
 
 
 > ⚙️ **Dica:** Após montar seu modelo, você pode salvar e reutilizar o fluxo de trabalho como uma ferramenta personalizada dentro do QGIS!
 
-### 2.1 Model Helper
+### 2.2  Algoritmos e Processamento
+ O Model Helper permite utilizar algoritmos do QGIS Processing Framework, Incluindo processing de plugins como o DSGTools. Esses algoritmos são os blocos fundamentais dos modelos, executando tarefas como:
 
-#### 2.1.1 Funcionalidades do Model Helper
-#### 2.1.2 Assistente de Criação
-#### 2.1.3 Templates e Configurações
+📏 Validação Geométrica
+
+- Checar geometrias inválidas
+- Detectar polígonos sobrepostos ou com buracos
+- Eliminar duplicatas
+
+🔍 Análise de Atributos
+
+- Verificar preenchimento de campos obrigatórios
+- Identificar valores fora de domínio
+- Validar relacionamentos entre tabelas
+
+🌐 Validação Espacial
+
+- Verificar se feições estão dentro da área de interesse
+- Checar interseções, contenções ou adjacências entre camadas
+- Confirmar presença ou ausência de feições em regiões específicas
+
+⚙️ Outros Processamentos
+
+- Aplicar buffers, dissoluções, recortes
+- Reclassificar feições
+- Exportar resultados como novas camadas
+
+<img src="assets/modulo-05/img-interface-algoritmo.png" alt="interface-algoritmo" width="400"/>
+
+  *Figura 5.0: Algoritmos do QGIS e do DSGTools disponíveis*
+
+> ⚙️ **Dica:**: Antes de construir seu modelo completo, teste os algoritmos individualmente no menu “Processamento” do QGIS. Isso ajuda a entender os parâmetros necessários e os resultados esperados.
+
+#### 2.3 Funcionalidades do Model 
+
+ Neste tópico abordaremos sobre as funcionalidades disponíveis que serão úteis na construção dos modelos que está acessível na aba superior:
+
+<img src="assets/modulo-05/img-interface-superior.png" alt="interface-superior" width="400"/>
+
+ *Figura 6.0: Funcionalidades da aba superior*
+
+- ✅ Modelo Validado
+Verifica se o modelo está corretamente estruturado (sem conexões ausentes, parâmetros obrigatórios em falta etc.). Essa verificação é essencial antes de rodar.
+
+- ▶️ Rodar Modelo (F5)
+Executa o modelo de forma isolada, sem necessidade de estar vinculado a um workflow.
+
+- 🔀 Reordenar Entradas
+Permite definir a ordem de solicitação dos parâmetros ao usuário durante a execução.
+
+- 📂 Abrir / Salvar / Salvar como...
+Gerencia os arquivos de modelos (extensão .model3) para reutilização e backup.
+
+- 📌 Salvar no Projeto
+Associa o modelo diretamente ao projeto .qgz, facilitando o versionamento e compartilhamento.
+
+- 📝 Editar Ajuda do Modelo
+Permite inserir uma descrição personalizada que será exibida para o usuário durante a execução.
+
+- 📤 Exportar
+Gera um arquivo externo para compartilhar o modelo com outros projetos ou usuários.
+
+> ⚙️ **Dica:**: Para garantir que seu modelo funcione corretamente no Workflow Toolbox, sempre valide antes de salvar. Modelos com erros de conexão ou parâmetros ausentes não são executados.
+
+
+#### 2.4 Prática construcao model
+ Nesta seção, será abordada a construção dos modelos (models) utilizados nos workflows. Os modelos representam fluxos de validação automatizados, formados por algoritmos encadeados que operam sobre os dados geoespaciais. O QGIS fornece um ambiente visual, chamado Modelador Gráfico, que permite criar esses fluxos de forma interativa, sem necessidade de programação.
+
+🟢 Passo 1 – Abrindo o QGIS e o Modelador Gráfico
+Abra o QGIS e acesse o Modelador Gráfico por meio do menu:
+
+Menu Processing → Modelador Gráfico
+
+Você verá uma tela com o canvas vazio, onde os algoritmos e entradas serão adicionados.
+
+🧩 Passo 2 – Adicionando um Algoritmo
+Na aba lateral Algoritmos, pesquise por “Verificador de Geometria Inválida” (ou o algoritmo equivalente usado no DSGTools). Dê dois cliques ou arraste para o canvas.
+
+ <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-01" width="400"/> tutorial 01
+
+*Figura 6.0: tutorial 01*
+
+🔧 Passo 3 – Definindo os Parâmetros de Entrada
+Assim que o algoritmo for inserido, será aberta uma janela solicitando os parâmetros.
+
+O primeiro parâmetro será a camada de entrada. Clique no campo correspondente e selecione a opção de camada desejada.
+
+ <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-02" width="400"/> tutorial 02
+
+*Figura 6.1: tutorial 01*
+
+📥 Tipos de Entrada Disponíveis
+Você poderá escolher entre diferentes tipos de entrada:
+
+tipo 01
+<img src="assets/modulo-05/img-tutorial-entrada-01.png" alt="interface-tutorial-02" width="400"/> tutorial entrada 01
+
+*Figura 6.1.1: tutorial 01*
+
+tipo 02
+<img src="assets/modulo-05/img-tutorial-entrada-02.png" alt="interface-tutorial-02" width="400"/> tutorial entrada 02
+
+*Figura 6.1.2: tutorial 01*
+
+tipo 03
+<img src="assets/modulo-05/img-tutorial-entrada-03.png" alt="interface-tutorial-02" width="400"/> tutorial entrada 03
+
+*Figura 6.1.3: tutorial 01*
+
+tipo 04
+<img src="assets/modulo-05/img-tutorial-entrada-04.png" alt="interface-tutorial-02" width="400"/> tutorial entrada 04
+
+*Figura 6.1.4: tutorial 01*
+
+
+
+Figura 6.X: Tipos de entrada mais comuns no Modelador Gráfico
+
+Para este exemplo, utilizaremos a entrada do tipo Camada Vetorial
+
+
+🏁 Passo 4- – Nomeando a Saída
+Defina o nome da camada de saída, por exemplo: “Erros Identificados”. Isso facilitará a identificação do resultado após a execução.
+
+📷 [IMG - Campo de saída nomeado como Erros Identificados]
+
+💾 Passo 5 – Salvando e Executando o Modelo
+Com tudo configurado, clique em:
+
+Menu Modelo → Salvar como...
+Escolha uma pasta e salve com um nome representativo, como verifica_geometria.model3.
+
+Em seguida, clique em Rodar Modelo (F5) para iniciar a execução.
+
+📷 [IMG - Modelo sendo salvo]
+📷 [IMG - Execução do modelo em andamento]
+
+🟢 Resultado Final
+O QGIS irá processar os dados e gerar a camada de saída com os erros encontrados. Você poderá visualizar essas geometrias diretamente no mapa.
+
+📷 [IMG - Camada de saída com flags ou erros destacados]
 
 ### 2.2 Especificidades dos Modelos
 
