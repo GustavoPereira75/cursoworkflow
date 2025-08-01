@@ -235,65 +235,71 @@ Gera um arquivo externo para compartilhar o modelo com outros projetos ou usuár
 
  Nesta seção, será abordada a construção dos modelos (models) utilizados nos workflows. Os modelos representam fluxos de validação automatizados, formados por algoritmos encadeados que operam sobre os dados geoespaciais. O QGIS fornece um ambiente visual, chamado Modelador Gráfico, que permite criar esses fluxos de forma interativa, sem necessidade de programação.
 
-🟢 Passo 1 – Abrindo o QGIS e o Modelador Gráfico
+- 🟢 Passo 1 – Abrindo o QGIS e o Modelador Gráfico
 Abra o QGIS e acesse o Modelador Gráfico por meio do menu:
 
 `Menu Processing → Modelador Gráfico`
 
 Você verá uma tela com o canvas vazio, onde os algoritmos e entradas serão adicionados.
 
-🧩 Passo 2 – Adicionando um Algoritmo
+- 🧩 Passo 2 – Adicionando um Algoritmo
 Na aba lateral Algoritmos, pesquise por “Verificador de Geometria Inválida” (ou o algoritmo equivalente usado no DSGTools). Dê dois cliques ou arraste para o canvas.
 
- <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-01" width="700"/>
+ <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-01" width="500"/>
 
  *Figura 6.0: tutorial 01*
 
-🔧 Passo 3 – Definindo os Parâmetros de Entrada
+- 🔧 Passo 3 – Definindo os Parâmetros de Entrada
 Assim que o algoritmo for inserido, será aberta uma janela solicitando os parâmetros.
 
 O primeiro parâmetro será a camada de entrada. Clique no campo correspondente e selecione a opção de camada desejada.
 
- <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-02" width="700"/>
+ <img src="assets/modulo-05/img-interface-model-tutorial-2.png" alt="interface-tutorial-02" width="500"/>
 
  *Figura 6.1: tutorial 01*
 
-📥 Tipos de Entrada Disponíveis
+- 🔧 Passo 3.1  Tipos de Entrada Disponíveis
 Você poderá escolher entre diferentes tipos de entrada:
 
-tipo 01
+  Este tipo de entrada exibe apenas as camadas que estão carregadas no QGIS no momento da execução. Funciona bem para operações simples em uma camada específica já visível no projeto:
+  
 <img src="assets/modulo-05/img-tutorial-entrada-01.png" alt="interface-tutorial-02" width="400"/>
 
 *Figura 6.1.1: tutorial 01*
 
-tipo 02
+ Esse tipo é mais avançado. Ele solicita uma expressão da calculadora de campo, permitindo:
+- Criar variáveis dinâmicas;
+- Filtrar feições automaticamente;
+- Puxar múltiplas camadas com base em uma lógica definida.
+  
 <img src="assets/modulo-05/img-tutorial-entrada-02.png" alt="interface-tutorial-02" width="400"/>
 
  *Figura 6.1.2: tutorial 02*
 
-tipo 03
+ Aqui, o modelo apenas define o tipo de geometria aceito (ponto, linha ou polígono), pode ser outras entradas além de geometria, mas a camada real será escolhida pelo usuário no momento da execução. É útil quando o modelo precisa ser flexível e aplicável a diferentes conjuntos de dados.
+ 
 <img src="assets/modulo-05/img-tutorial-entrada-03.png" alt="interface-tutorial-02" width="600"/>
 
  *Figura 6.1.3: tutorial 03*
 
-tipo 04
+ Este tipo permite usar a saída de um algoritmo anterior como entrada de outro, facilitando o encadeamento de processos. É indispensável quando se precisa aplicar um tratamento em sequência, como validação → filtragem → exportação.
+ 
 <img src="assets/modulo-05/img-tutorial-entrada-04.png" alt="interface-tutorial-02" width="600"/>
 
  *Figura 6.1.4: tutorial 04*
 
 
-
-Figura 6.X: Tipos de entrada mais comuns no Modelador Gráfico
-
 Para este exemplo, utilizaremos a entrada do tipo Camada Vetorial
 
 
-🏁 Passo 4- – Nomeando a Saída
+- 🏁 Passo 4- – Nomeando a Saída
 Defina o nome da camada de saída, por exemplo: “Erros Identificados”. Isso facilitará a identificação do resultado após a execução.
 
-📷 [IMG - Campo de saída nomeado como Erros Identificados]
+<img src="assets/modulo-05/img-tutorial-saida-01.png" alt="tutorial_saida-01" width="600"/>
 
-💾 Passo 5 – Salvando e Executando o Modelo
+ *Figura 6.2: tutorial saida*
+
+- 💾 Passo 5 – Salvando e Executando o Modelo
 Com tudo configurado, clique em:
 
 Menu Modelo → Salvar como...
@@ -301,13 +307,16 @@ Escolha uma pasta e salve com um nome representativo, como verifica_geometria.mo
 
 Em seguida, clique em Rodar Modelo (F5) para iniciar a execução.
 
-📷 [IMG - Modelo sendo salvo]
-📷 [IMG - Execução do modelo em andamento]
+<img src="assets/modulo-05/img-tutorial-execucao-01" alt="img-tutorial-execucao-01" width="600"/>
 
-🟢 Resultado Final
+ *Figura 6.3: tutorial execução*
+
+- 🟢 Resultado Final
 O QGIS irá processar os dados e gerar a camada de saída com os erros encontrados. Você poderá visualizar essas geometrias diretamente no mapa.
 
-📷 [IMG - Camada de saída com flags ou erros destacados]
+<img src="assets/modulo-05/img-tutorial-execucao-02" alt="img-tutorial-execucao-02" width="600"/>
+
+ *Figura 6.4: tutorial Resultado*
 
 ### 2.2 Especificidades dos Modelos
 
