@@ -159,7 +159,7 @@ As saídas são os resultados gerados após o processamento. Podem ser:
 Essas saídas podem ser salvas, reutilizadas ou utilizadas como insumo em outros modelos.
 
 ---
- <img src="assets/modulo-05/img-interface-model-etl.png" alt="Interface do Modelador Gráfico" width="400"/>
+ <img src="assets/modulo-05/img-interface-model-etl.png" alt="Interface do Modelador Gráfico" width="700"/>
 
   *Figura 5.0: Interface do Modelador Gráfico Canvas*
 
@@ -193,7 +193,7 @@ Essas saídas podem ser salvas, reutilizadas ou utilizadas como insumo em outros
 - Reclassificar feições
 - Exportar resultados como novas camadas
 
-<img src="assets/modulo-05/img-interface-algoritmo.png" alt="interface-algoritmo" width="400"/>
+<img src="assets/modulo-05/img-interface-algoritmo.png" alt="interface-algoritmo" width="700"/>
 
   *Figura 5.0: Algoritmos do QGIS e do DSGTools disponíveis*
 
@@ -231,20 +231,21 @@ Gera um arquivo externo para compartilhar o modelo com outros projetos ou usuár
 > ⚙️ **Dica:**: Para garantir que seu modelo funcione corretamente no Workflow Toolbox, sempre valide antes de salvar. Modelos com erros de conexão ou parâmetros ausentes não são executados.
 
 
-#### 2.4 Prática construcao model
+### 2.4 Prática Construcao de Modelos
+
  Nesta seção, será abordada a construção dos modelos (models) utilizados nos workflows. Os modelos representam fluxos de validação automatizados, formados por algoritmos encadeados que operam sobre os dados geoespaciais. O QGIS fornece um ambiente visual, chamado Modelador Gráfico, que permite criar esses fluxos de forma interativa, sem necessidade de programação.
 
 🟢 Passo 1 – Abrindo o QGIS e o Modelador Gráfico
 Abra o QGIS e acesse o Modelador Gráfico por meio do menu:
 
-Menu Processing → Modelador Gráfico
+`Menu Processing → Modelador Gráfico`
 
 Você verá uma tela com o canvas vazio, onde os algoritmos e entradas serão adicionados.
 
 🧩 Passo 2 – Adicionando um Algoritmo
 Na aba lateral Algoritmos, pesquise por “Verificador de Geometria Inválida” (ou o algoritmo equivalente usado no DSGTools). Dê dois cliques ou arraste para o canvas.
 
- <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-01" width="400"/> tutorial 01
+ <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-01" width="700"/> tutorial 01
 
 *Figura 6.0: tutorial 01*
 
@@ -253,7 +254,7 @@ Assim que o algoritmo for inserido, será aberta uma janela solicitando os parâ
 
 O primeiro parâmetro será a camada de entrada. Clique no campo correspondente e selecione a opção de camada desejada.
 
- <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-02" width="400"/> tutorial 02
+ <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-02" width="700"/> tutorial 02
 
 *Figura 6.1: tutorial 01*
 
@@ -268,17 +269,17 @@ tipo 01
 tipo 02
 <img src="assets/modulo-05/img-tutorial-entrada-02.png" alt="interface-tutorial-02" width="400"/> tutorial entrada 02
 
-*Figura 6.1.2: tutorial 01*
+*Figura 6.1.2: tutorial 02*
 
 tipo 03
-<img src="assets/modulo-05/img-tutorial-entrada-03.png" alt="interface-tutorial-02" width="400"/> tutorial entrada 03
+<img src="assets/modulo-05/img-tutorial-entrada-03.png" alt="interface-tutorial-02" width="600"/> tutorial entrada 03
 
-*Figura 6.1.3: tutorial 01*
+*Figura 6.1.3: tutorial 03*
 
 tipo 04
-<img src="assets/modulo-05/img-tutorial-entrada-04.png" alt="interface-tutorial-02" width="400"/> tutorial entrada 04
+<img src="assets/modulo-05/img-tutorial-entrada-04.png" alt="interface-tutorial-02" width="600"/> tutorial entrada 04
 
-*Figura 6.1.4: tutorial 01*
+*Figura 6.1.4: tutorial 04*
 
 
 
