@@ -22,7 +22,7 @@ O Workflow Toolbox é a ferramenta de validação de dados geoespaciais do plugi
 A utilização do Workflow Toolbox possibilita:
 - Automatizar rotinas de validação que, manualmente, seriam longas e sujeitas a erros;
 - Aplicar regras padronizadas a diferentes conjuntos de dados;
-- Registrar exceções e idenficar inconsistências;
+- Registrar exceções e identificar inconsistências;
 - Facilitar o controle de qualidade
 
 A construção dos modelos será abordada detalhadamente na Unidade 2 deste módulo..
@@ -51,7 +51,7 @@ A interface principal é composta pelos seguintes elementos:
 
 <img src="assets/modulo-05/img-interface-workflow.png" alt="Interface do Workflow Toolbox no QGIS" width="400"/>
       
-  *Figura 1.0: Interface Workflow Toolbox no QGIS*
+  *Figura 1.1: Interface Workflow Toolbox no QGIS*
 
 ### 1.4 Integração com QGIS Processing
 O Workflow Toolbox é construído sobre o framework de Processamento do QGIS (QGIS Processing), o que permite que os modelos criados no DSGTools utilizem diretamente algoritmos já existentes no ambiente QGIS.
@@ -68,7 +68,7 @@ Essa integração amplia consideravelmente as possibilidades da ferramenta, perm
   
  <img src="assets/modulo-05/img-interface-processing.png" alt="Interface do Processing" width="400"/>
       
-  *Figura 2.0: Interface processing*
+  *Figura 1.2: Interface processing*
 
 
 ## 2. Como Montar os Models
@@ -76,9 +76,9 @@ Essa integração amplia consideravelmente as possibilidades da ferramenta, perm
 
  O acesso a interface é feito no QGIS como mostrado abaixo:
 
- <img src="assets/modulo-05/img-model-painel.png" alt="interface do painel" width="800"/>
+ <img src="assets/modulo-05/img-model-painel.png" alt="interface do painel" width="900"/>
 
-*Figura 3.0: Interface do painel*
+*Figura 2.1: Interface do painel*
 
 ### 2.1 Interface do Modelador Gráfico do QGIS
 
@@ -121,9 +121,9 @@ Exibe os tipos de **entradas necessárias** para o modelo funcionar, como:
 
  <img src="assets/modulo-05/img-interface-model-canvas.png" alt="Interface do Modelador Gráfico" width="700"/>
 
-*Figura 4.0: Interface do Modelador Gráfico*
+*Figura 2.2: Interface do Modelador Gráfico*
 
-### 2.1.1 Construção no Canvas
+### 2.2 Construção no Canvas
   Exemplo de estrutura básica de um modelo que segue três etapas:
 
 ---
@@ -161,12 +161,12 @@ Essas saídas podem ser salvas, reutilizadas ou utilizadas como insumo em outros
 ---
  <img src="assets/modulo-05/img-interface-model-etl.png" alt="Interface do Modelador Gráfico" width="700"/>
 
-  *Figura 5.0: Interface do Modelador Gráfico Canvas*
+  *Figura 2.3: Interface do Modelador Gráfico Canvas*
 
 
 > ⚙️ **Dica:** Após montar seu modelo, você pode salvar e reutilizar o fluxo de trabalho como uma ferramenta personalizada dentro do QGIS!
 
-### 2.2  Algoritmos e Processamento
+### 2.3  Algoritmos e Processamento
  O Model Helper permite utilizar algoritmos do QGIS Processing Framework, Incluindo processing de plugins como o DSGTools. Esses algoritmos são os blocos fundamentais dos modelos, executando tarefas como:
 
 📏 Validação Geométrica
@@ -174,6 +174,8 @@ Essas saídas podem ser salvas, reutilizadas ou utilizadas como insumo em outros
 - Checar geometrias inválidas
 - Detectar polígonos sobrepostos ou com buracos
 - Eliminar duplicatas
+  
+---
 
 🔍 Análise de Atributos
 
@@ -181,11 +183,15 @@ Essas saídas podem ser salvas, reutilizadas ou utilizadas como insumo em outros
 - Identificar valores fora de domínio
 - Validar relacionamentos entre tabelas
 
+---
+
 🌐 Validação Espacial
 
 - Verificar se feições estão dentro da área de interesse
 - Checar interseções, contenções ou adjacências entre camadas
 - Confirmar presença ou ausência de feições em regiões específicas
+
+---
 
 ⚙️ Outros Processamentos
 
@@ -193,19 +199,21 @@ Essas saídas podem ser salvas, reutilizadas ou utilizadas como insumo em outros
 - Reclassificar feições
 - Exportar resultados como novas camadas
 
-<img src="assets/modulo-05/img-interface-algoritmo.png" alt="interface-algoritmo" width="700"/>
+---
 
-  *Figura 5.0: Algoritmos do QGIS e do DSGTools disponíveis*
+<img src="assets/modulo-05/img-interface-algoritmo.png" alt="interface-algoritmo" width="800"/>
+
+  *Figura 2.4: Algoritmos do QGIS e do DSGTools disponíveis*
 
 > ⚙️ **Dica:**: Antes de construir seu modelo completo, teste os algoritmos individualmente no menu “Processamento” do QGIS. Isso ajuda a entender os parâmetros necessários e os resultados esperados.
 
-#### 2.3 Funcionalidades do Model 
+#### 2.4 Funcionalidades do Model 
 
  Neste tópico abordaremos sobre as funcionalidades disponíveis que serão úteis na construção dos modelos que está acessível na aba superior:
 
 <img src="assets/modulo-05/img-interface-superior.png" alt="interface-superior" width="400"/>
 
- *Figura 6.0: Funcionalidades da aba superior*
+ *Figura 2.5: Funcionalidades da aba superior*
 
 - ✅ Modelo Validado
 Verifica se o modelo está corretamente estruturado (sem conexões ausentes, parâmetros obrigatórios em falta etc.). Essa verificação é essencial antes de rodar.
@@ -231,7 +239,7 @@ Gera um arquivo externo para compartilhar o modelo com outros projetos ou usuár
 > ⚙️ **Dica:**: Para garantir que seu modelo funcione corretamente no Workflow Toolbox, sempre valide antes de salvar. Modelos com erros de conexão ou parâmetros ausentes não são executados.
 
 
-### 2.4 Prática Construcao de Modelos
+### 2.5 Tutorial Prático: Criando um Modelo
 
  Nesta seção, será abordada a construção dos modelos (models) utilizados nos workflows. Os modelos representam fluxos de validação automatizados, formados por algoritmos encadeados que operam sobre os dados geoespaciais. O QGIS fornece um ambiente visual, chamado Modelador Gráfico, que permite criar esses fluxos de forma interativa, sem necessidade de programação.
 
@@ -242,21 +250,25 @@ Abra o QGIS e acesse o Modelador Gráfico por meio do menu:
 
 Você verá uma tela com o canvas vazio, onde os algoritmos e entradas serão adicionados.
 
+---
+
 - 🧩 Passo 2 – Adicionando um Algoritmo
 Na aba lateral Algoritmos, pesquise por “Verificador de Geometria Inválida” (ou o algoritmo equivalente usado no DSGTools). Dê dois cliques ou arraste para o canvas.
 
- <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-01" width="500"/>
+ <img src="assets/modulo-05/img-interface-model-tutorial-1.png" alt="interface-tutorial-01" width="600"/>
 
- *Figura 6.0: tutorial 01*
+ *Figura 2.6: tutorial 01*
+
+---
 
 - 🔧 Passo 3 – Definindo os Parâmetros de Entrada
 Assim que o algoritmo for inserido, será aberta uma janela solicitando os parâmetros.
 
 O primeiro parâmetro será a camada de entrada. Clique no campo correspondente e selecione a opção de camada desejada.
 
- <img src="assets/modulo-05/img-interface-model-tutorial-2.png" alt="interface-tutorial-02" width="500"/>
+ <img src="assets/modulo-05/img-interface-model-tutorial-2.png" alt="interface-tutorial-02" width="800"/>
 
- *Figura 6.1: tutorial 01*
+ *Figura 2.7: tutorial 01*
 
 - 🔧 Passo 3.1  Tipos de Entrada Disponíveis
 Você poderá escolher entre diferentes tipos de entrada:
@@ -265,7 +277,7 @@ Você poderá escolher entre diferentes tipos de entrada:
   
 <img src="assets/modulo-05/img-tutorial-entrada-01.png" alt="interface-tutorial-02" width="400"/>
 
-*Figura 6.1.1: tutorial 01*
+*Figura 2.8: tutorial 01.1*
 
  Esse tipo é mais avançado. Ele solicita uma expressão da calculadora de campo, permitindo:
 - Criar variáveis dinâmicas;
@@ -274,49 +286,55 @@ Você poderá escolher entre diferentes tipos de entrada:
   
 <img src="assets/modulo-05/img-tutorial-entrada-02.png" alt="interface-tutorial-02" width="400"/>
 
- *Figura 6.1.2: tutorial 02*
+ *Figura 2.9: tutorial 02*
 
  Aqui, o modelo apenas define o tipo de geometria aceito (ponto, linha ou polígono), pode ser outras entradas além de geometria, mas a camada real será escolhida pelo usuário no momento da execução. É útil quando o modelo precisa ser flexível e aplicável a diferentes conjuntos de dados.
  
-<img src="assets/modulo-05/img-tutorial-entrada-03.png" alt="interface-tutorial-02" width="600"/>
+<img src="assets/modulo-05/img-tutorial-entrada-03.png" alt="interface-tutorial-02" width="800"/>
 
- *Figura 6.1.3: tutorial 03*
+ *Figura 2.10: tutorial 03*
 
  Este tipo permite usar a saída de um algoritmo anterior como entrada de outro, facilitando o encadeamento de processos. É indispensável quando se precisa aplicar um tratamento em sequência, como validação → filtragem → exportação.
  
-<img src="assets/modulo-05/img-tutorial-entrada-04.png" alt="interface-tutorial-02" width="600"/>
+<img src="assets/modulo-05/img-tutorial-entrada-04.png" alt="interface-tutorial-02" width="800"/>
 
- *Figura 6.1.4: tutorial 04*
+ *Figura 2.11: tutorial 04*
 
 
 Para este exemplo, utilizaremos a entrada do tipo Camada Vetorial
 
+---
 
 - 🏁 Passo 4- – Nomeando a Saída
 Defina o nome da camada de saída, por exemplo: “Erros Identificados”. Isso facilitará a identificação do resultado após a execução.
 
-<img src="assets/modulo-05/img-tutorial-saida-01.png" alt="tutorial_saida-01" width="600"/>
+<img src="assets/modulo-05/img-tutorial-saida-01.png" alt="tutorial_saida-01" width="800"/>
 
- *Figura 6.2: tutorial saida*
+ *Figura 2.12: tutorial saida*
+
+---
+
 
 - 💾 Passo 5 – Salvando e Executando o Modelo
 Com tudo configurado, clique em:
 
-Menu Modelo → Salvar como...
+Menu → Modelo → Salvar como...
 Escolha uma pasta e salve com um nome representativo, como verifica_geometria.model3.
 
-Em seguida, clique em Rodar Modelo (F5) para iniciar a execução.
+Em seguida, clique em `Rodar Modelo (F5` para iniciar a execução.
 
-<img src="assets/modulo-05/img-tutorial-execucao-01.png" alt="img-tutorial-execucao-01" width="600"/>
+<img src="assets/modulo-05/img-tutorial-execucao-01.png" alt="img-tutorial-execucao-01" width="800"/>
 
- *Figura 6.3: tutorial execução*
+ *Figura 2.13: tutorial execução*
+
+---
 
 - 🟢 Resultado Final
 O QGIS irá processar os dados e gerar a camada de saída com os erros encontrados. Você poderá visualizar essas geometrias diretamente no mapa.
 
-<img src="assets/modulo-05/img-tutorial-execucao-02.png" alt="img-tutorial-execucao-02" width="600"/>
+<img src="assets/modulo-05/img-tutorial-execucao-02.png" alt="img-tutorial-execucao-02" width="800"/>
 
- *Figura 6.4: tutorial Resultado*
+ *Figura 2.14: tutorial Resultado*
 
 
 ## 3. Como Montar o Workflow
@@ -329,55 +347,66 @@ A ferramenta Workflow Toolbox, dentro do plugin DSGTools, é responsável por es
 - Definir a ordem de execução;
 - Configurar opções de tratamento como falso positivo, etapas obrigatórias e mais.
 
-🔹 Passo 1: Acessando a Workflow Toolbox
+### 3.1 Acessando a Ferramenta
 Acesse a ferramenta pela barra do DSGTools:
 
 `DSGTools → Ferramentas de Produção → Workflow Toolbox`
 
-A interface será exibida com o painel principal: Selecionar workflow, Adcionar e importar.
+A interface será exibida com o painel principal: Selecionar workflow, Adicionar e importar.
 
-<img src="assets/modulo-05/img-interface-workflow.png" alt="Interface da Workflow Toolbox" width="700"/>
-Figura 7.0 – Interface da Workflow Toolbox
+<img src="assets/modulo-05/img-interface-workflow.png" alt="Interface da Workflow Toolbox" width="500"/>
 
-🔹 Passo 2: Criar um Novo Workflow
+Figura 3.1 – Interface da Workflow Toolbox
+
+---
+
+### 3.2: Criar um Novo Workflow
 Clique no botão Novo Workflow (ícone de “+”) para iniciar a criação.
 
 Escolha um nome descritivo, como Validação Geometria e Topologia;
 
 Defina o Nome do autor e versão do fluxo de trabalho;
 
-<img src="assets/modulo-05/img-interface-workflow-2.png" alt="Interface da Workflow Toolbox-2" width="700"/>
-Figura 7.1 – Interface da Workflow Toolbox
+<img src="assets/modulo-05/img-interface-workflow-2.png" alt="Interface da Workflow Toolbox-2" width="800"/>
 
-🔹 Passo 3: Adicionar Etapas (Models)
+Figura 3.2 – Interface da Workflow Toolbox
+
+---
+
+### 3.3: Adicionar Etapas (Models)
 Clique em Adicionar (ícone de “+”) no canto esquerdo para incluir um modelo:
 
 Dê um nome para a etapa (ex: “Verificar Geometrias Inválidas”);
 
- defina a fonte do modelo Selecionando o arquivo .model3;
+Defina a fonte do modelo selecionando o arquivo .model3;
 
 Marque a camada de Flags se for o caso;
 
 Especifique o comportamento das flags, definindo se o modelo deve interromper a execução, ignorar a ocorrência ou apenas emitir um aviso, e indique se falsos positivos serão aceitos.
 
-<img src="assets/modulo-05/img-interface-workflow-2.png" alt="Adicionando etapas no workflow" width="700"/>
+<img src="assets/modulo-05/img-interface-workflow-2.png" alt="Adicionando etapas no workflow" width="800"/>
 
-Figura 7.2 – Adicionando uma etapa ao workflow
+Figura 3.3 – Adicionando uma etapa ao workflow
 
-🔹 Passo 4: Organizar e Salvar
+---
+
+### 3.4 Salvando e Reorganizando
 Você pode adicionar quantos modelos quiser. Eles serão executados na ordem em que aparecem. Utilize os botões da esquerda para reordenar, duplicar ou remover etapas.
 
 Finalize clicando em Salvar Workflow na parte inferior.
 
-<img src="assets/modulo-05/img-interface-workflow-3.png" alt="Adicionando models no workflow" width="700"/>
+<img src="assets/modulo-05/img-interface-workflow-3.png" alt="Adicionando models no workflow" width="800"/>
 
-Figura 7.3 – Adicionando model ao workflow
+Figura 3.4 – Adicionando model ao workflow
+
+---
 
 ## 4. Modalidades de Tratamento
 Durante a configuração de cada etapa de um workflow, o usuário pode definir como o sistema deve se comportar diante de inconsistências. Isso é feito por meio de um conjunto de opções que aparecem na grade de parâmetros, conforme imagem abaixo:
 
 <img src="assets/modulo-05/img-modalidades-tratamento.png" alt="modalidades de tratamento" width="600"/>
-Figura 8.0 – Opções de tratamento configuráveis por etapa
+
+Figura 4.1 – Opções de tratamento configuráveis por etapa
 
 As colunas disponíveis oferecem controle sobre o que fazer com os erros (flags), como e quando seguir para a próxima etapa, e o que deve ser exibido ao usuário. Abaixo, explicamos cada uma:
 
@@ -389,35 +418,46 @@ Ignorar: continua a execução sem alertar.
 
 📝 Ideal para etapas com diferentes níveis de criticidade.
 
+---
+
 🔸 **Flags podem ser falso positivo**
 Permite que o usuário assinale manualmente que a falha identificada não é relevante.
 Marca a flag como resolvida, mesmo que tecnicamente ainda esteja presente.
 Útil para exceções justificadas.
+
+---
 
 🔸 **Pausar após a execução**
 Faz com que o workflow seja interrompido após a execução daquela etapa, aguardando ação manual do usuário antes de continuar.
 Usado quando se deseja verificar visualmente os resultados antes de seguir.
 Também pode ser útil para permitir edição manual intermediária.
 
+---
+
 🔸 **Carregar camadas de saída que não são flags**
 Garante que, além das camadas de erro (flags), outras saídas do algoritmo também sejam carregadas automaticamente no QGIS.
 Útil para depuração e verificação de saídas intermediárias.
 Ajuda a visualizar o resultado completo da etapa.
 
+---
 
 ## 5. Executar um Workflow Existente
 Após configurar as etapas e parâmetros do seu workflow, você pode executá-lo diretamente pela interface do DSGTools. Esse processo é simples, mas envolve algumas opções que influenciam o comportamento da execução.
 
-6.1 Selecionando um workflow
+### 5.1 Selecionando um workflow
 
 Na interface principal do Workflow Toolbox:
 
-<img src="assets/modulo-05/img-interface-execucao.png" alt="interface execução" width="800"/>
+<img src="assets/modulo-05/img-interface-execucao.png" alt="interface execução" width="1000"/>
+
+Figura 5.1 – Tela de execução 
 
 No topo da janela, utilize o menu para importar o workflow que deseja executar.
 O nome do modelo será exibido na tabela com colunas para status e progresso.
 
-6.2 Executando o workflow
+---
+
+### 5.2 Executando o workflow
 Com o modelo selecionado:
 
 Clique no botão Executar 🔵 (localizado no canto inferior esquerdo).
@@ -428,14 +468,16 @@ O progresso é exibido na barra inferior e na coluna "Progress" da tabela.
 
 Caso alguma etapa tenha sido configurada como “Pausar após execução”, o processo aguardará interação manual para continuar.
 
-6.3 Recuperando um workflow interrompido
+---
+
+### 5.3 Recuperando um workflow interrompido
 Se a execução anterior foi interrompida ou pausada, você pode retomá-la:
 
 Use o botão Recupera a partir do último modelo 🔁 (ao lado de “Executar”).
 
 O DSGTools carregará o último estado salvo e continuará a partir da última etapa concluída com sucesso.
 
-6.4 Observando o resultado
+### 5.4 Verificar Resultado
 Após a execução:
 
 As flags identificadas são exibidas no QGIS.
@@ -444,46 +486,22 @@ Dependendo das configurações, camadas intermediárias (não flags) também pod
 
 O usuário pode revisar os resultados e realizar correções, se necessário.
 
+---
+
 ## Resumo
-O que você aprendeu neste módulo:
 
-🔹 **Workflow Toolbox**
+Neste módulo você aprendeu:
 
-Ferramenta do DSGTools para automatizar o controle de qualidade.
-Permite criar sequências (workflows) com diferentes etapas de validação.
-Garante padronização, agilidade e menor chance de erro.
+* Workflow Toolbox: automatizar controle de qualidade;
+* Modelador Gráfico: construir modelos;
+* Integração QGIS Processing;
+* Tratamento de inconsistências (flags);
+* Execução e monitoramento de workflows.
 
-🔹 **Modelador Gráfico (QGIS)**
-
-Interface visual para construir modelos personalizados de validação.
-Você pode montar o fluxo de entrada → processamento → saída.
-Cada modelo pode ser usado em diferentes workflows.
-
-🔹 **Integração com o QGIS Processing**
-
-Os modelos podem usar qualquer algoritmo do QGIS ou do DSGTools.
-Também aceita scripts personalizados ou de outros plugins compatíveis.
-
-🔹 **Tratamento de Inconsistências** (Flags)
-
-Define o que fazer quando erros são encontrados:
-✔️ Continuar
-⚠️ Avisar
-⛔ Parar
-
-Pode aceitar falsos positivos e carregar camadas extras, se configurado.
-
-🔹 **Execução e Monitoramento**
-
-Os workflows são executados diretamente no QGIS.
-É possível pausar, retomar, salvar e acompanhar o progresso.
-O sistema mostra onde ocorreram erros e o que foi processado.
-
-
-
+---
 
 ## Material Complementar
 - [Guia do Workflow Toolbox](https://exemplo.com)
-  - [Arquivos Workflow Toolbox](https://exemplo.com)
+- [Arquivos Workflow Toolbox](https://exemplo.com)
 - [Biblioteca de Modelos](https://exemplo.com)
 - [Video construção de modelos ](https://exemplo.com)
