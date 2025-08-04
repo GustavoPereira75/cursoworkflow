@@ -238,7 +238,7 @@ Gera um arquivo externo para compartilhar o modelo com outros projetos ou usuár
 - 🟢 Passo 1 – Abrindo o QGIS e o Modelador Gráfico
 Abra o QGIS e acesse o Modelador Gráfico por meio do menu:
 
-`Menu Processing → Modelador Gráfico`
+`Menu → Processing → Modelador Gráfico`
 
 Você verá uma tela com o canvas vazio, onde os algoritmos e entradas serão adicionados.
 
@@ -318,30 +318,172 @@ O QGIS irá processar os dados e gerar a camada de saída com os erros encontrad
 
  *Figura 6.4: tutorial Resultado*
 
-### 2.2 Especificidades dos Modelos
 
 ## 3. Como Montar o Workflow
+ Com os modelos prontos, podemos organizá-los em um workflow para executar uma sequência de validações automaticamente, economizando tempo e garantindo consistência no processo.
 
-## 4. Executar um Workflow Existente
+A ferramenta Workflow Toolbox, dentro do plugin DSGTools, é responsável por essa organização. Nela, é possível:
 
-## 5. Modalidades de Tratamento
+- Criar um novo fluxo (workflow);
+- Inserir os modelos (modelos .model3);
+- Definir a ordem de execução;
+- Configurar opções de tratamento como falso positivo, etapas obrigatórias e mais.
 
-### 5.1 Falso Positivo
+🔹 Passo 1: Acessando a Workflow Toolbox
+Acesse a ferramenta pela barra do DSGTools:
 
-### 5.2 Voltar Etapa
+`DSGTools → Ferramentas de Produção → Workflow Toolbox`
 
-### 5.3 Salvar no Projeto
+A interface será exibida com o painel principal: Selecionar workflow, Adcionar e importar.
 
-### 5.4 Outras Modalidades
+<img src="assets/modulo-05/img-interface-workflow.png" alt="Interface da Workflow Toolbox" width="700"/>
+Figura 7.0 – Interface da Workflow Toolbox
+
+🔹 Passo 2: Criar um Novo Workflow
+Clique no botão Novo Workflow (ícone de “+”) para iniciar a criação.
+
+Escolha um nome descritivo, como Validação Geometria e Topologia;
+
+Defina o Nome do autor e versão do fluxo de trabalho;
+
+<img src="assets/modulo-05/img-interface-workflow-2.png" alt="Interface da Workflow Toolbox-2" width="700"/>
+Figura 7.1 – Interface da Workflow Toolbox
+
+🔹 Passo 3: Adicionar Etapas (Models)
+Clique em Adicionar (ícone de “+”) no canto esquerdo para incluir um modelo:
+
+Dê um nome para a etapa (ex: “Verificar Geometrias Inválidas”);
+
+ defina a fonte do modelo Selecionando o arquivo .model3;
+
+Marque a camada de Flags se for o caso;
+
+Especifique o comportamento das flags, definindo se o modelo deve interromper a execução, ignorar a ocorrência ou apenas emitir um aviso, e indique se falsos positivos serão aceitos.
+
+<img src="assets/modulo-05/img-interface-workflow-2.png" alt="Adicionando etapas no workflow" width="700"/>
+
+Figura 7.2 – Adicionando uma etapa ao workflow
+
+🔹 Passo 4: Organizar e Salvar
+Você pode adicionar quantos modelos quiser. Eles serão executados na ordem em que aparecem. Utilize os botões da esquerda para reordenar, duplicar ou remover etapas.
+
+Finalize clicando em Salvar Workflow na parte inferior.
+
+<img src="assets/modulo-05/img-interface-workflow-3.png" alt="Adicionando models no workflow" width="700"/>
+
+Figura 7.3 – Adicionando model ao workflow
+
+## 4. Modalidades de Tratamento
+Durante a configuração de cada etapa de um workflow, o usuário pode definir como o sistema deve se comportar diante de inconsistências. Isso é feito por meio de um conjunto de opções que aparecem na grade de parâmetros, conforme imagem abaixo:
+
+<img src="assets/modulo-05/img-modalidades-tratamento.png" alt="modalidades de tratamento" width="600"/>
+Figura 8.0 – Opções de tratamento configuráveis por etapa
+
+As colunas disponíveis oferecem controle sobre o que fazer com os erros (flags), como e quando seguir para a próxima etapa, e o que deve ser exibido ao usuário. Abaixo, explicamos cada uma:
+
+🔸 **Nas Flags**
+Define o que o sistema deve fazer quando um erro (flag) é identificado na etapa.
+Parada: interrompe imediatamente o workflow.
+Aviso: exibe um aviso, mas permite continuar.
+Ignorar: continua a execução sem alertar.
+
+📝 Ideal para etapas com diferentes níveis de criticidade.
+
+🔸 **Flags podem ser falso positivo**
+Permite que o usuário assinale manualmente que a falha identificada não é relevante.
+Marca a flag como resolvida, mesmo que tecnicamente ainda esteja presente.
+Útil para exceções justificadas.
+
+🔸 **Pausar após a execução**
+Faz com que o workflow seja interrompido após a execução daquela etapa, aguardando ação manual do usuário antes de continuar.
+Usado quando se deseja verificar visualmente os resultados antes de seguir.
+Também pode ser útil para permitir edição manual intermediária.
+
+🔸 **Carregar camadas de saída que não são flags**
+Garante que, além das camadas de erro (flags), outras saídas do algoritmo também sejam carregadas automaticamente no QGIS.
+Útil para depuração e verificação de saídas intermediárias.
+Ajuda a visualizar o resultado completo da etapa.
+
+
+## 5. Executar um Workflow Existente
+Após configurar as etapas e parâmetros do seu workflow, você pode executá-lo diretamente pela interface do DSGTools. Esse processo é simples, mas envolve algumas opções que influenciam o comportamento da execução.
+
+6.1 Selecionando um workflow
+
+Na interface principal do Workflow Toolbox:
+
+<img src="assets/modulo-05/img-interface-execucao.png" alt="interface execução" width="800"/>
+
+No topo da janela, utilize o menu para importar o workflow que deseja executar.
+O nome do modelo será exibido na tabela com colunas para status e progresso.
+
+6.2 Executando o workflow
+Com o modelo selecionado:
+
+Clique no botão Executar 🔵 (localizado no canto inferior esquerdo).
+
+A execução iniciará, seguindo a ordem das etapas definidas.
+
+O progresso é exibido na barra inferior e na coluna "Progress" da tabela.
+
+Caso alguma etapa tenha sido configurada como “Pausar após execução”, o processo aguardará interação manual para continuar.
+
+6.3 Recuperando um workflow interrompido
+Se a execução anterior foi interrompida ou pausada, você pode retomá-la:
+
+Use o botão Recupera a partir do último modelo 🔁 (ao lado de “Executar”).
+
+O DSGTools carregará o último estado salvo e continuará a partir da última etapa concluída com sucesso.
+
+6.4 Observando o resultado
+Após a execução:
+
+As flags identificadas são exibidas no QGIS.
+
+Dependendo das configurações, camadas intermediárias (não flags) também podem ser carregadas.
+
+O usuário pode revisar os resultados e realizar correções, se necessário.
 
 ## Resumo
-- O Workflow Toolbox automatiza processos de controle de qualidade
-- A construção de modelos permite customização para necessidades específicas
-- O monitoramento garante execução confiável
-- As modalidades de tratamento oferecem flexibilidade no processo
+O que você aprendeu neste módulo:
+
+🔹 **Workflow Toolbox**
+
+Ferramenta do DSGTools para automatizar o controle de qualidade.
+Permite criar sequências (workflows) com diferentes etapas de validação.
+Garante padronização, agilidade e menor chance de erro.
+
+🔹 **Modelador Gráfico (QGIS)**
+
+Interface visual para construir modelos personalizados de validação.
+Você pode montar o fluxo de entrada → processamento → saída.
+Cada modelo pode ser usado em diferentes workflows.
+
+🔹 **Integração com o QGIS Processing**
+
+Os modelos podem usar qualquer algoritmo do QGIS ou do DSGTools.
+Também aceita scripts personalizados ou de outros plugins compatíveis.
+
+🔹 **Tratamento de Inconsistências** (Flags)
+
+Define o que fazer quando erros são encontrados:
+✔️ Continuar
+⚠️ Avisar
+⛔ Parar
+
+Pode aceitar falsos positivos e carregar camadas extras, se configurado.
+
+🔹 **Execução e Monitoramento**
+
+Os workflows são executados diretamente no QGIS.
+É possível pausar, retomar, salvar e acompanhar o progresso.
+O sistema mostra onde ocorreram erros e o que foi processado.
+
 
 
 
 ## Material Complementar
 - [Guia do Workflow Toolbox](https://exemplo.com)
+  - [Arquivos Workflow Toolbox](https://exemplo.com)
 - [Biblioteca de Modelos](https://exemplo.com)
+- [Video construção de modelos ](https://exemplo.com)
