@@ -34,7 +34,7 @@ A arquitetura do Workflow Toolbox foi desenvolvida para oferecer flexibilidade, 
 
 - **Workflows**: Representam a sequência lógica de execução dos modelos. São compostos por etapas interligadas, nas quais a saída de um modelo pode servir como entrada para o próximo. A ordem de execução, as dependências e as configurações são definidas pelo usuário.
 
-- **Gerenciador de Execução (`Caixa de Ferramentas de validação de dados Geoespaciais`) : Responsável por controlar o andamento do workflow. Monitora o status de cada etapa (pendente, em execução, concluída ou com erro), permite pausas, retomadas, reexecuções e registro das exceções.
+- **Gerenciador de Execução** (`Caixa de Ferramentas de validação de dados Geoespaciais`) : Responsável por controlar o andamento do workflow. Monitora o status de cada etapa (pendente, em execução, concluída ou com erro), permite pausas, retomadas, reexecuções e registro das exceções.
   
 ### 1.3 Interface do Usuário
 A interface do Workflow Toolbox foi projetada para oferecer uma experiência visual clara e funcional durante a configuração e execução dos workflows. A ferramenta é acessada por meio do menu do DSGTools, dentro do ambiente do QGIS.
