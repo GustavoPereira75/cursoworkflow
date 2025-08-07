@@ -502,6 +502,6 @@ Neste módulo você aprendeu:
 
 ## Material Complementar
 - [Biblioteca de Modelos Carta Topo](https://github.com/dsgoficial/configuracoes_producao/tree/main/edgv_topo/1_4/modelo_qgis)
-- [Biblioteca de Modelos Carta to](https://github.com/dsgoficial/configuracoes_producao/tree/main/edgv_orto/2_5/modelo_qgis)
+- [Biblioteca de Modelos Carta Orto](https://github.com/dsgoficial/configuracoes_producao/tree/main/edgv_orto/2_5/modelo_qgis)
 - [Video construção de modelos ](https://www.youtube.com/watch?v=Y0Kag1ETHnE)
-- [Video uso de Modelos ](https://www.youtube.com/watch?v=bC4BfRb72EM).
+- [Video uso de Modelos ](https://www.youtube.com/watch?v=bC4BfRb72EM)
